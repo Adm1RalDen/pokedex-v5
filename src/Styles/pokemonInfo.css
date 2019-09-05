@@ -1,0 +1,38 @@
+.ant-card-grid{
+    margin: 0.5rem 0; 
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.anticon-arrow-left{
+    display: flex;
+    justify-content: left
+}
+/* .anticon-arrow-left:hover{
+    cursor: pointer;
+} */
+.ant-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+}
+.ant-progress{
+    width: 37vw;
+}
+@media screen and (max-width: 798px){
+    .ant-card{
+        width: 90vw;
+    }
+}
+@media screen and (min-width: 799px) and (max-width: 1200px){
+    .ant-card{
+        width: 38vw;
+    }
+    .ant-progress{
+        width: 34vw;
+    }
+}

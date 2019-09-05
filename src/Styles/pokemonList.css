@@ -1,0 +1,22 @@
+.pokemonItem{
+    min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.ant-card{
+    margin: 1rem;
+}
+.ant-card-cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+.ant-card-body{
+    text-align: center;
+}

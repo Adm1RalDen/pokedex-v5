@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import { Layout } from 'antd'
+import { Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import 'antd/dist/antd.css'
+import Header from './Components/header'
+import PokemonInfo from './Components/pokemonInfo'
+import PokemonList from './Components/pokemonList'
+import Pagination from './Components/pagination'
+import Search from './Components/search'
+import './Styles/app.css'
 
-export default App;
+const App = inject('Store')(observer((props) => {
+    // props.Store.
+    return (
+        <Layout>
+            <Header />
+            <Layout.Content>
+                <Route exact path='/' component={Search} />
+                <Route exact path='/' component={PokemonList} />
+                <Route exact path='/PokemonInfo/:namePokemon' component={PokemonInfo} />
+            </Layout.Content>
+            <Layout.Footer>
+                <Route exact path='/' component={Pagination} />
+            </Layout.Footer>
+        </Layout>
+    );
+}))
+
+export default App
